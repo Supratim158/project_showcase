@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+import 'package:project_showcase/size_config.dart';
+import 'package:provider/provider.dart';
+
+import '../../notifiers/page_notifiers.dart';
+
+class LinkedPageView extends StatefulWidget {
+
+  final Function(int) backViewBuilder;
+  final Function(int) frontViewBuilder;
+  final int itemCount;
+
+  const LinkedPageView({super.key, required this.backViewBuilder, required this.frontViewBuilder, required this.itemCount});
+
+  @override
+  State<LinkedPageView> createState() => _LinkedPageViewState();
+}
+
+class _LinkedPageViewState extends State<LinkedPageView> {
+
+  PageNotifier backPageNotifier = PageNotifier();
+  PageNotifier frontPageNotifier = PageNotifier(viewportFraction: 0.8);
+
+  @override
+  void initState() {
+    super.initState();
+    frontPageNotifier.pageController..addListener(_onMainScroll);
+  }
+
+  @override
+  void dispose() {
+    frontPageNotifier.pageController.dispose();
+    super.dispose();
+  }
+
+  _onMainScroll(){
+    backPageNotifier.pageController.jumpTo(frontPageNotifier.pageController.offset/0.8);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider.value(
+      value: frontPageNotifier,
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          PageView.builder(
+            reverse: true,
+            pageSnapping: false,
+            physics: NeverScrollableScrollPhysics(),
+            controller: backPageNotifier.pageController,
+              itemCount: widget.itemCount,
+              itemBuilder: (context, index)=> widget.backViewBuilder(index),
+          ),
+          Container(
+            height: SizeConfig.screenHeight*0.7,
+            child: PageView.builder(
+              controller: frontPageNotifier.pageController,
+              itemCount: widget.itemCount,
+              itemBuilder: (context, index)=> widget.frontViewBuilder(index),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
