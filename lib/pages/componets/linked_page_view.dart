@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:project_showcase/size_config.dart';
 import 'package:provider/provider.dart';
@@ -5,19 +7,21 @@ import 'package:provider/provider.dart';
 import '../../notifiers/page_notifiers.dart';
 
 class LinkedPageView extends StatefulWidget {
-
   final Function(int) backViewBuilder;
   final Function(int) frontViewBuilder;
   final int itemCount;
 
-  const LinkedPageView({super.key, required this.backViewBuilder, required this.frontViewBuilder, required this.itemCount});
+  const LinkedPageView(
+      {super.key,
+      required this.backViewBuilder,
+      required this.frontViewBuilder,
+      required this.itemCount});
 
   @override
   State<LinkedPageView> createState() => _LinkedPageViewState();
 }
 
 class _LinkedPageViewState extends State<LinkedPageView> {
-
   PageNotifier backPageNotifier = PageNotifier();
   PageNotifier frontPageNotifier = PageNotifier(viewportFraction: 0.8);
 
@@ -33,8 +37,9 @@ class _LinkedPageViewState extends State<LinkedPageView> {
     super.dispose();
   }
 
-  _onMainScroll(){
-    backPageNotifier.pageController.jumpTo(frontPageNotifier.pageController.offset/0.8);
+  _onMainScroll() {
+    backPageNotifier.pageController
+        .jumpTo(frontPageNotifier.pageController.offset / 0.8);
   }
 
   @override
@@ -45,21 +50,29 @@ class _LinkedPageViewState extends State<LinkedPageView> {
         alignment: Alignment.bottomCenter,
         children: [
           PageView.builder(
-            reverse: true,
-            pageSnapping: false,
-            physics: NeverScrollableScrollPhysics(),
-            controller: backPageNotifier.pageController,
+              reverse: true,
+              pageSnapping: false,
+              physics: NeverScrollableScrollPhysics(),
+              controller: backPageNotifier.pageController,
               itemCount: widget.itemCount,
-              itemBuilder: (context, index)=> widget.backViewBuilder(index),
-          ),
+              itemBuilder: (context, index) => widget.backViewBuilder(index)
+      ),
+
           Container(
-            height: SizeConfig.screenHeight*0.7,
+            height: SizeConfig.screenHeight * 0.7,
             child: PageView.builder(
               controller: frontPageNotifier.pageController,
               itemCount: widget.itemCount,
-              itemBuilder: (context, index)=> widget.frontViewBuilder(index),
+              itemBuilder: (context, index) =>
+                  Consumer<PageNotifier>(builder: (context, value, child) {
+                    return Transform.translate(offset: Offset(0, (value.currentPage - index).abs()*50),
+                        child:Opacity(
+                            opacity: max(1-(value.currentPage - index).abs()*0.5, 0.5),
+                            child: widget.frontViewBuilder(index))
+                    );
+                  })),
+
             ),
-          ),
         ],
       ),
     );

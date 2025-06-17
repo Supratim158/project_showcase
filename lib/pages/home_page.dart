@@ -4,6 +4,8 @@ import 'package:project_showcase/components/ticket_button.dart';
 import 'package:project_showcase/models/movie.dart';
 import 'package:project_showcase/pages/componets/header.dart';
 import 'package:project_showcase/pages/componets/linked_page_view.dart';
+import 'package:project_showcase/pages/componets/movie_preview.dart';
+import 'package:project_showcase/pages/detail/detail_page.dart';
 import 'package:project_showcase/size_config.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,41 +26,30 @@ class _HomePageState extends State<HomePage> {
           alignment: Alignment.bottomCenter,
           children: [
             LinkedPageView(
-                backViewBuilder: (index)=>Container(
-                  child: Image.asset(movies[index].imageUrl,fit: BoxFit.fill,),
+              backViewBuilder: (index) => Container(
+                child: Image.asset(
+                  movies[index].imageUrl,
+                  fit: BoxFit.fill,
                 ),
-                frontViewBuilder: (index)=> Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12),
-                  child: Container(
-                    // width: 100,
-                    height: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft:
-                          Radius.circular(SizeConfig.defaultHeight * 4),
-                          topRight: Radius.circular(
-                              SizeConfig.defaultHeight * 4)),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          vertical: SizeConfig.defaultHeight * 2,
-                          horizontal: SizeConfig.defaultHeight * 2),
-                      child: MovieHeader(movie: movies[index]),
-                    ),
-                  ),
-                ),
-                itemCount: movies.length,
-
+              ),
+              frontViewBuilder: (index) => GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                DetailPage(movie: movies[index])));
+                  },
+                  child: MoviePreview(index: index)),
+              itemCount: movies.length,
             ),
             Header(),
             Positioned(
-                bottom: SizeConfig.defaultHeight * 1.5,
+                bottom: SizeConfig.defaultHeight ,
                 child: SizedBox(
                   width: SizeConfig.screenWidth * 0.5,
                   child: TicketButton(),
-                )
-            ),
+                )),
           ],
         ),
       ),

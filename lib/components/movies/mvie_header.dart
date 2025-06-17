@@ -14,19 +14,7 @@ class MovieHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [ClipRRect(
-        borderRadius: BorderRadius.circular(
-            SizeConfig.defaultHeight * 3),
-        child: Container(
-          height: SizeConfig.defaultHeight * 40,
-          width: double.infinity,
-          child: Image.asset(
-            movie.imageUrl,
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-        SizedBox(height: SizeConfig.defaultHeight,),
+      children: [
         Text(movie.name, style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: Colors.black, fontWeight: FontWeight.w600),),
         SizedBox(height: SizeConfig.defaultHeight,),
         MovieGenres(genres: movie.genres),

@@ -7,6 +7,7 @@ class TicketButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: SizeConfig.defaultHeight*6.5,
       color: Colors.black,
       padding: EdgeInsets.symmetric(vertical: SizeConfig.defaultHeight*2, horizontal: SizeConfig.defaultHeight * 6),
       child: Center(
