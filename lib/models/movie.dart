@@ -74,10 +74,10 @@ List<Movie> movies = [
             name: "Charlize Theron",
             imageUrl: "assets/cast/charlize_theron.jpg"),
         Actor(name: "Kiki Layne", imageUrl: "assets/cast/kiki_layne.jpg"),
-        // Actor(name: "Kiki Layne", imageUrl: "assets/cast/kiki_layne.jpg"),
-        Actor(
-            name: "Matthias Schoenaerts",
-            imageUrl: "assets/cast/matthias_schoenaerts.jpg"),
+        Actor(name: "Kiki Layne", imageUrl: "assets/cast/kiki_layne.jpg"),
+        // Actor(
+        //     name: "Matthias Schoenaerts",
+        //     imageUrl: "assets/cast/matthias_schoenaerts.jpg"),
       ]),
   Movie(
       id: 4,

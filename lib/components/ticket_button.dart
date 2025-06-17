@@ -7,13 +7,19 @@ class TicketButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: SizeConfig.defaultHeight*6.5,
-      color: Colors.black,
-      padding: EdgeInsets.symmetric(vertical: SizeConfig.defaultHeight*2, horizontal: SizeConfig.defaultHeight * 6),
-      child: Center(
-        child: Text("BUY TICKET",style: Theme.of(context).textTheme.labelLarge?.copyWith(
-          color: Colors.white, fontSize: 15
-        ),),
+      height: SizeConfig.defaultHeight * 6,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      alignment: Alignment.center,
+      child: Text(
+        "BUY TICKET",
+        style: Theme.of(context).textTheme.labelLarge?.copyWith(
+          color: Colors.white,
+          fontSize: 15,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }

@@ -1,19 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:project_showcase/notifiers/animation_notifier.dart';
-import 'package:provider/provider.dart';
-import 'package:simple_animations/simple_animations.dart';
+import 'dart:math';
 
-class WidthAnimation extends StatelessWidget {
-  final double begin;
-  final double end;
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:simple_animations/stateless_animation/custom_animation.dart';
+
+import '../notifiers/animation_notifier.dart';
+
+class OpacityScaleAnimation extends StatelessWidget {
+
   final Widget child;
 
-  const WidthAnimation({
-    super.key,
-    required this.begin,
-    required this.end,
-    required this.child,
-  });
+  const OpacityScaleAnimation({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +19,17 @@ class WidthAnimation extends StatelessWidget {
           var controlAnimation = value.animateHomeToDetail
               ? CustomAnimationControl.play
               : CustomAnimationControl.playReverse;
+
+          var reverseTimeFactor = value.animateHomeToDetail ? 1 : 0.4;
           return CustomAnimation(
             control: controlAnimation,
-            tween: Tween(begin: begin, end: end),
+            tween: Tween(begin: 0.0, end: 1.0),
             curve: Curves.easeInOut,
-            duration: Duration(milliseconds: 300),
+            duration: Duration(milliseconds: (500 * reverseTimeFactor).toInt()),
             builder: (context, child, value) {
-              return SizedBox(
-                width: value,
-                child: child,
+              return Transform.scale(
+                scale: min(value * 3, 1),
+                child: Opacity(opacity: value, child: child),
               );
             },
             child: child,

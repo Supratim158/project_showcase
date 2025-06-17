@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:project_showcase/components/movies/mvie_header.dart';
 import 'package:project_showcase/components/ticket_button.dart';
 import 'package:project_showcase/models/movie.dart';
+import 'package:project_showcase/notifiers/animation_notifier.dart';
 import 'package:project_showcase/pages/componets/header.dart';
 import 'package:project_showcase/pages/componets/linked_page_view.dart';
 import 'package:project_showcase/pages/componets/movie_preview.dart';
 import 'package:project_showcase/pages/detail/detail_page.dart';
 import 'package:project_showcase/size_config.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -34,11 +36,14 @@ class _HomePageState extends State<HomePage> {
               ),
               frontViewBuilder: (index) => GestureDetector(
                   onTap: () {
-                    Navigator.push(
+                    Provider.of<AnimationNotifier>(context, listen: false).playHomeToDetailAnimations();
+                    Future.delayed(Duration(milliseconds: 120),()=>Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                DetailPage(movie: movies[index])));
+                        PageRouteBuilder(
+                            transitionDuration: Duration(milliseconds: 0),
+                            pageBuilder: (context, animation, secondaryAnimation) =>
+                                DetailPage(movie: movies[index]))));
+
                   },
                   child: MoviePreview(index: index)),
               itemCount: movies.length,
@@ -47,7 +52,7 @@ class _HomePageState extends State<HomePage> {
             Positioned(
                 bottom: SizeConfig.defaultHeight ,
                 child: SizedBox(
-                  width: SizeConfig.screenWidth * 0.5,
+                  width: SizeConfig.screenWidth * 0.7,
                   child: TicketButton(),
                 )),
           ],

@@ -68,11 +68,12 @@ class _LinkedPageViewState extends State<LinkedPageView> {
                     return Transform.translate(offset: Offset(0, (value.currentPage - index).abs()*50),
                         child:Opacity(
                             opacity: max(1-(value.currentPage - index).abs()*0.5, 0.5),
-                            child: widget.frontViewBuilder(index))
-                    );
-                  })),
-
-            ),
+                            child: child
+                    ));
+                  },
+                    child: widget.frontViewBuilder(index))
+                  )
+          ),
         ],
       ),
     );
