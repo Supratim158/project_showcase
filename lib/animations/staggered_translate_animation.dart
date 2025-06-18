@@ -11,7 +11,10 @@ class StaggeredTranslateAnimation extends StatelessWidget {
   final int delay;
   final Widget child;
 
-  const StaggeredTranslateAnimation({super.key, required this.translateX, required this.translateY, required this.delay, required this.child});
+  const StaggeredTranslateAnimation({super.key, this.translateX = -200.0,
+    this.translateY = 200.0,
+    this.delay = 0,
+    required this.child,});
 
   @override
   Widget build(BuildContext context) {

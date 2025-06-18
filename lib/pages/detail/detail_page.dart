@@ -5,6 +5,7 @@ import 'package:project_showcase/components/back_container.dart';
 import 'package:project_showcase/components/movies/mvie_header.dart';
 import 'package:project_showcase/pages/componets/header.dart';
 import 'package:project_showcase/pages/detail/componets/cast.dart';
+import 'package:project_showcase/pages/detail/componets/header_card.dart';
 import 'package:project_showcase/pages/detail/componets/summary.dart';
 import 'package:project_showcase/size_config.dart';
 import 'package:provider/provider.dart';
@@ -33,6 +34,7 @@ class _DetailPageState extends State<DetailPage> {
           body: Stack(
             alignment: Alignment.bottomCenter,
             children: [
+              HeaderCard(indexMovie: movies.indexOf(widget.movie)),
               Header(),
               Container(
                 height: SizeConfig.screenHeight*0.7,
