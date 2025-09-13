@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0fed1f7d-6534-465d-959b-4bb94d028dc9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/frontend/lib/animations/load_animation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/animations/load_animation.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/animations/opacity_scale_animation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/animations/opacity_scale_animation.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/animations/staggered_translate_animation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/animations/staggered_translate_animation.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/animations/width_animation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/animations/width_animation.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/components/back_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/components/back_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/components/movies/mvie_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/components/movies/mvie_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/components/movies/mvies_genres.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/components/movies/mvies_genres.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/components/movies/mvies_rate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/components/movies/mvies_rate.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/components/ticket_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/components/ticket_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/models/actor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/models/actor.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/models/movie.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/models/movie.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/notifiers/animation_notifier.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/notifiers/animation_notifier.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/notifiers/page_notifiers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/notifiers/page_notifiers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/pages/componets/header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/pages/componets/header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/pages/componets/linked_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/pages/componets/linked_page_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/pages/componets/movie_preview.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/pages/componets/movie_preview.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/pages/detail/componets/actor_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/pages/detail/componets/actor_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/pages/detail/componets/cast.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/pages/detail/componets/cast.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/pages/detail/componets/header_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/pages/detail/componets/header_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/pages/detail/componets/summary.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/pages/detail/componets/summary.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/pages/detail/detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/pages/detail/detail_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/pages/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/pages/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/size_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/size_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/frontend" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Supratim158"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Supratim158/project_showcase.git",
+    "accountId": "c3810ea4-dd61-407c-bc0c-551ff3b43573"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="31umMWizsDegUEdj9L15X7jrQmc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/flutter_projects/ar_earth",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0fed1f7d-6534-465d-959b-4bb94d028dc9" name="Changes" comment="" />
+      <created>1756382285970</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756382285970</updated>
+    </task>
+    <servers />
+  </component>
+</project>
